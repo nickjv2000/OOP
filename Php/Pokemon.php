@@ -32,6 +32,6 @@ class Pokemon {
 	}
 }
 
-$pikachu = new Pokemon('Pika', 'Lightning', '60 hitpoints', '10 Health', 'Electric Ring 50 DMG', 'Pika Punch 20 DMG', 'Fire 1.5x multiplier', 'Fighting 20 points');
+$pikachu = new Pokemon('Pika', 'Lightning', '60', '10', 'Electric Ring 50 DMG', 'Pika Punch 20 DMG', 'Fire 1.5x', 'Fighting 20P');
 
-$charmeleon = new Pokemon('Charmy', 'Fire', '60 hitpoints', '10 Health', 'Headbutt 10 DMG', 'Flare 30 DMG', 'Water 2.0x multiplier', 'Lightning 10 points');
+$charmeleon = new Pokemon('Charmy', 'Fire', '60 ', '10', 'Headbutt 10 DMG', 'Flare 30 DMG', 'Water 2.0x', 'Lightning 10P');
