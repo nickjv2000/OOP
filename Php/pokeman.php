@@ -1,20 +1,20 @@
 <?php 
-$name;
-$hitpoints;
-$health;
-$attack1;
-$dmg1;
-$attack2;
-$dmg2;
-$energytype;
-$weakness;
-$resistance;
 
 include('resistanceType.php');
 include('energyType.php');
 include('weaknessType.php');
 
 class Pokemon{
+	public $name;
+	public $hitpoints;
+	public $health;
+	public $attack1;
+	public $dmg1;
+	public $attack2;
+	public $dmg2;
+	public $energytype;
+	public $weakness;
+	public $resistance;
 
 	public function __construct($name, $energyType, $hitpoints, $health, $attack1, $dmg1, $attack2, $dmg2, $weaknessType, $resistanceType)
 		{
@@ -35,15 +35,17 @@ class Pokemon{
 	}
 }
 
-$pikachu = new Pokemon('LightningRat', $energyTypeLightning, 60, 60, 'Electric Ring', 50, 'Pika Punch', 20, $fireWeakness, $fightingResistance);
+class Pikachu extends Pokemon{ 
 
-$charmeleon = new Pokemon('FireMonster', $energyTypeFire, 60, 60, 'Headbutt', 10, 'Flare', 30, $waterResistance, $lightningWeakness);
+}
+
+class Charmeleon extends Pokemon{
+
+}
+
+$pikachu = new Pikachu('LightningRat', $energyTypeLightning, 60, 60, 'Electric Ring', 50, 'Pika Punch', 20, $fightingResistance, $fireWeakness);
+
+$charmeleon = new Charmeleon('FireMonster', $energyTypeFire, 60, 60, 'Headbutt', 10, 'Flare', 30, $waterResistance, $lightningWeakness);
 
 $rat = $pikachu->name;
 $char = $charmeleon->name;
-
-
-
-	// repeat
-	// change 10 & 1.5 to the values of resistance and weakness
-	// give the attacks names to be used aswell as the numeric value 
