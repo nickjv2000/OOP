@@ -6,15 +6,15 @@ include('weaknessType.php');
 
 class Pokemon{
 	public $name;
+	public $energyType;
 	public $hitpoints;
 	public $health;
 	public $attack1;
 	public $dmg1;
 	public $attack2;
 	public $dmg2;
-	public $energytype;
-	public $weakness;
-	public $resistance;
+	public $weaknessType;
+	public $resistanceType; // encapsulation: what is the right level of visiblity modifiers?
 
 	public function __construct($name, $energyType, $hitpoints, $health, $attack1, $dmg1, $attack2, $dmg2, $weaknessType, $resistanceType)
 		{
@@ -36,16 +36,21 @@ class Pokemon{
 }
 
 class Pikachu extends Pokemon{ 
+	
+	public function __construct() {
+		parent::__construct("LightningRat", $energyTypeLightning, 60, 60, "Electric Ring", 50, "Pika Punch", 20, $fireWeakness, $fightingResistance);
+	}
+
+	// create a Pikachu constructor that calls the parent constructor
 
 }
 
 class Charmeleon extends Pokemon{
-
+		public function __construct() {
+		parent::__construct('FireMonster', $energyTypeFire, 60, 60, 'Headbutt', 10, 'Flare', 30, $waterResistance, $lightningWeakness);
+	}
 }
 
-$pikachu = new Pikachu('LightningRat', $energyTypeLightning, 60, 60, 'Electric Ring', 50, 'Pika Punch', 20, $fightingResistance, $fireWeakness);
+$pikachu = new Pikachu();
 
-$charmeleon = new Charmeleon('FireMonster', $energyTypeFire, 60, 60, 'Headbutt', 10, 'Flare', 30, $waterResistance, $lightningWeakness);
-
-$rat = $pikachu->name;
-$char = $charmeleon->name;
+$charmeleon = new Charmeleon();
