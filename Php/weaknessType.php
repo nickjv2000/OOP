@@ -1,10 +1,10 @@
 <?php 
-$fireWeakness;
-$waterWeakness;
-$lightningWeakness;
-$fightingWeakness;
-
 class weaknessType {
+
+	public $fireWeakness;
+	public $waterWeakness;
+	public $lightningWeakness;
+	public $fightingWeakness;
 
 	public function __construct($fireWeakness, $waterWeakness, $lightningWeakness, $fightingWeakness)
 		{

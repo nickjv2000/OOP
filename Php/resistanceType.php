@@ -1,10 +1,10 @@
 <?php 
-$fireResistance;
-$waterResistance;
-$lightningResistance;
-$fightingResistance;
-
 class resistanceType {
+
+	public $fireResistance;
+	public $waterResistance;
+	public $lightningResistance;
+	public $fightingResistance;
 
 	public function __construct($fireResistance, $waterResistance, $lightningResistance, $fightingResistance)
 		{
