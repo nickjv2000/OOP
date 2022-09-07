@@ -22,18 +22,18 @@ if($pikachu->hitpoints > 0 && $charmeleon->hitpoints > 0) {
   echo $char . " has " . ($charmeleon->health) . " health <br>";
   echo $rat . " uses " . ($pikachu->attack1) . "<br>";
 
-  $charmeleon->hitpoints = $charmeleon->hitpoints - ($pikachu->dmg1 - 10);
+  $charmeleon->hitpoints = $charmeleon->hitpoints - ($pikachu->dmg1 - 10); // change -10 to $charmeleon->resistanceType
 
   echo $char . " has taken damage! His health is now at " . ($charmeleon->hitpoints) . " health<br>";
   echo $char . " starts a counter attack and uses " . ($charmeleon->attack2) . " <br>";
 
-  $pikachu->hitpoints = $pikachu->hitpoints - ($charmeleon->dmg2 * 1.5);
+  $pikachu->hitpoints = $pikachu->hitpoints - ($charmeleon->dmg2 * 1.5); // change *1.5 to $pikachu->weaknessType
 
   echo $rat . " took a lot of damage! Their health is now at " . ($pikachu->hitpoints) . " health<br>";
   echo $rat . " is going crazy and jumps around to show he's full of energy to attack back <br>";
   echo $rat . " uses " . ($pikachu->attack2) . "<br>";
 
-  $charmeleon->hitpoints = $charmeleon->hitpoints - ($pikachu->dmg2 - 10);
+  $charmeleon->hitpoints = $charmeleon->hitpoints - ($pikachu->dmg2 - 10); // change -10 to $charmeleon->resistanceType
 
   echo $char . " is now at " . ($charmeleon->hitpoints) . " health <br>";
   echo $char . " attacks with " . ($charmeleon->attack1) . "<br>";
@@ -41,11 +41,11 @@ if($pikachu->hitpoints > 0 && $charmeleon->hitpoints > 0) {
   echo $rat . " has " . ($pikachu->hitpoints) . " health <br>";
   echo $rat . " uses " . ($pikachu->attack2) . "<br>";
 
-  $charmeleon->hitpoints = $charmeleon->hitpoints - ($pikachu->dmg2 - 10);
+  $charmeleon->hitpoints = $charmeleon->hitpoints - ($pikachu->dmg2 - 10); // change -10 to $charmeleon->resistanceType
 
   echo $char . " has " . ($charmeleon->hitpoints) . " health left the attack was fatal!<br>";
   echo $rat . " has survived with " . ($pikachu->hitpoints) . " health left and won the fight!";
-  }
+}
 ?>
 
 </div>
