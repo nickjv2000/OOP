@@ -12,6 +12,9 @@
 <?php 
 require 'pokeman.php';
 
+$rat = $pikachu->name;
+$char = $charmeleon->name;
+
 echo $pikachu . "<br>";
 echo $charmeleon . "<br>";
 echo "FIGHT <br> <br>";
