@@ -5,7 +5,7 @@ class weaknessType {
 
 	public function __construct($energyType, $multiplier)
 	{
-		$this->energyType = $energytype;
+		$this->energyType = $energyType;
 		$this->multiplier = $multiplier;
 	}
 
@@ -20,3 +20,4 @@ $fightingWeakness = new weaknessType('Water', 1.75);
 $lightningWeakness = new weaknessType('Fighting', 1.4);
 
 ?>
+

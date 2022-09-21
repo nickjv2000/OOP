@@ -23,17 +23,17 @@ class Pokemon{
 	private $multiplier;
 
 	// parent construction function to create a pokemon
-	public function __construct($name, $energyType, $hitpoints, $health, $attack1, $attack2, $weaknessType, $resistanceType, $worth, $multiplier)
+	public function __construct($name, $energyType, $hitpoints, $health, $attack1, $attack2, $attackDamage, $weaknessType, $resistanceType, $worth, $multiplier)
 		{
 			$this->name = $name;
-			$this->energyType = $energytype;
+			$this->energyType = $energyType;
 			$this->hitpoints = $hitpoints;
 			$this->health = $health;
 			$this->attack1 = $attack1;
 			$this->attack2 = $attack2;
 			$this->attackDamage = $attackDamage;
-			$this->weaknessType = $weakness;
-			$this->resistanceType = $resistance;
+			$this->weaknessType = $weaknessType;
+			$this->resistanceType = $resistanceType;
 			$this->worth = $worth;
 			$this->multiplier = $multiplier;
 		}
@@ -55,9 +55,13 @@ class Pokemon{
 	public function getHealth()		{return $this->health;}
 	public function getAttack1()	{return $this->attack1;}
 	public function getAttack2()    {return $this->attack2;}
-	public function getDmg1()		{return $this->attackDamage;}		
+	public function getAttackDmg()	{return $this->attackDamage;}		
 	public function getWeakness() 	{return $this->weaknessType;}
 	public function getResistance()	{return $this->resistanceType;}
 	public function getWorth()		{return $this->worth;}
 	public function getMultiplier()	{return $this->multiplier;}
 }
+
+
+
+

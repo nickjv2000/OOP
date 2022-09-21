@@ -1,5 +1,4 @@
 <?php 
-
 // Pikachu class to create a Pikachu object
 class Pikachu extends Pokemon{ 	
 	public function __construct($name) {
