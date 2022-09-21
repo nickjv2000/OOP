@@ -9,45 +9,63 @@
 </head>
 <body>
 
+<center>
 <?php 
 require 'pokeman.php';
 
-$rat = $pikachu->name;
-$char = $charmeleon->name;
+// create energytypes / weaknesses / resistances and the worth & multiplier for the weakness & resistance
+$energyTypeLightning = new energyType('Lightning');
+$energyTypeFire = new energyType('Fire');
+$energyTypeWater = new energyType('Water');
+$energyTypefighting = new energyType('Fighting');
 
-echo $pikachu . "<br>";
-echo $charmeleon . "<br>";
+$fireWeakness = new weaknessType('Lightning', 1.5);
+$waterWeakness = new weaknessType('Fire', 2);
+$fightingWeakness = new weaknessType('Water', 1.75);
+$lightningWeakness = new weaknessType('Fighting', 1.4);
+
+$fireResistance = new resistanceType('Water', 20);
+$waterResistance = new resistanceType('Fighting', 5);
+$lightningResistance = new resistanceType('Fire', 10);
+$fightingResistance = new resistanceType('Lightning', 20);
+
+// creating a new pikachu & charmeleon to fight with their names
+$pikachu = new Pikachu("LightningRat");
+$charmeleon = new Charmeleon('FireMonster');
+
+// the complete fight of pikachu vs charmeleon
+
 echo "FIGHT <br> <br>";
 
-if($pikachu->hitpoints > 0 && $charmeleon->hitpoints > 0) {
+if($pikachu->getHitpoints() > 0 && $charmeleon->getHitpoints() > 0) {
 
-  echo $rat . " has " . ($pikachu->health) . " health <br>";
-  echo $char . " has " . ($charmeleon->health) . " health <br>";
-  echo $rat . " uses " . ($pikachu->attack1) . "<br>";
+  echo $pikachu->getName() . " has " . $pikachu->getHealth() . " health <br>";
+  echo $charmeleon->getName() . " has " . $charmeleon->getHealth() . " health <br>";
+  echo $pikachu->getName() . " uses " . $pikachu->getAttack1() . "<br>";
 
-  $charmeleon->hitpoints = $charmeleon->hitpoints - ($pikachu->dmg1 - 10); // change -10 to $charmeleon->resistanceType
+  $charmeleon->setHitpoints($charmeleon->getHitpoints() - ($pikachu->getDmg1() - $charmeleon->getWorth()));
 
-  echo $char . " has taken damage! His health is now at " . ($charmeleon->hitpoints) . " health<br>";
-  echo $char . " starts a counter attack and uses " . ($charmeleon->attack2) . " <br>";
+  echo $charmeleon->getName() . " has taken damage! His health is now at " . $charmeleon->getHitpoints() . " health<br>";
+  echo $charmeleon->getName() . " starts a counter attack and uses " . $charmeleon->getAttack2() . " <br>";
 
-  $pikachu->hitpoints = $pikachu->hitpoints - ($charmeleon->dmg2 * 1.5); // change *1.5 to $pikachu->weaknessType
+  $pikachu->setHitpoints($pikachu->getHitpoints() - ($charmeleon->getDmg2() * $pikachu->getMultiplier())); 
 
-  echo $rat . " took a lot of damage! Their health is now at " . ($pikachu->hitpoints) . " health<br>";
-  echo $rat . " is going crazy and jumps around to show he's full of energy to attack back <br>";
-  echo $rat . " uses " . ($pikachu->attack2) . "<br>";
+  echo $pikachu->getName() . " took a lot of damage! Their health is now at " . $pikachu->getHitpoints() . " health<br>";
+  echo $pikachu->getName() . " is going crazy and jumps around to show he's full of energy to attack back <br>";
+  echo $pikachu->getName() . " uses " . $pikachu->getAttack2() . "<br>";
 
-  $charmeleon->hitpoints = $charmeleon->hitpoints - ($pikachu->dmg2 - 10); // change -10 to $charmeleon->resistanceType
+  $charmeleon->setHitpoints($charmeleon->getHitpoints() - ($pikachu->getDmg2() - $charmeleon->getWorth()));
 
-  echo $char . " is now at " . ($charmeleon->hitpoints) . " health <br>";
-  echo $char . " attacks with " . ($charmeleon->attack1) . "<br>";
-  echo $rat . " has blocked the attack! <br>";
-  echo $rat . " has " . ($pikachu->hitpoints) . " health <br>";
-  echo $rat . " uses " . ($pikachu->attack2) . "<br>";
+  echo $charmeleon->getName() . " is now at " . $charmeleon->getHitpoints() . " health <br>";
+  echo $charmeleon->getName() . " attacks with " . $charmeleon->getAttack1() . "<br>";
+  echo $pikachu->getName() . " has blocked the attack! <br>";
+  echo $pikachu->getName() . " has " . $pikachu->getHitpoints() . " health <br>";
+  echo $pikachu->getName() . " uses " . $pikachu->getAttack2() . "<br>";
 
-  $charmeleon->hitpoints = $charmeleon->hitpoints - ($pikachu->dmg2 - 10); // change -10 to $charmeleon->resistanceType
+  $charmeleon->setHitpoints($charmeleon->getHitpoints() - ($pikachu->getDmg2() - $charmeleon->getWorth())); 
 
-  echo $char . " has " . ($charmeleon->hitpoints) . " health left the attack was fatal!<br>";
-  echo $rat . " has survived with " . ($pikachu->hitpoints) . " health left and won the fight!";
+  echo $charmeleon->getName() . " has " . $charmeleon->getHitpoints() . " health left the attack was fatal!<br>";
+  echo $pikachu->getName() . " has survived with " . $pikachu->getHitpoints() . " health left and won the fight!";
 }
 ?>
 
