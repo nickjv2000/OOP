@@ -4,6 +4,8 @@ include('energyType.php');
 include('weaknessType.php');
 include('pikachu.php');
 include('charmeleon.php');
+include('attacks.php');
+// include('battle.php');
 
 // The main Pokemon class to create the properties & constructor to make a pokemon
 class Pokemon{
@@ -23,7 +25,7 @@ class Pokemon{
 	private $multiplier;
 
 	// parent construction function to create a pokemon
-	public function __construct($name, $energyType, $hitpoints, $health, $attack1, $attack2, $attackDamage, $weaknessType, $resistanceType, $worth, $multiplier)
+	public function __construct($name, $energyType, $hitpoints, $health, $attack1, $attack2, $weaknessType, $resistanceType, $worth, $multiplier)
 		{
 			$this->name = $name;
 			$this->energyType = $energyType;
@@ -31,7 +33,6 @@ class Pokemon{
 			$this->health = $health;
 			$this->attack1 = $attack1;
 			$this->attack2 = $attack2;
-			$this->attackDamage = $attackDamage;
 			$this->weaknessType = $weaknessType;
 			$this->resistanceType = $resistanceType;
 			$this->worth = $worth;
@@ -53,15 +54,11 @@ class Pokemon{
 	public function getEnergytype() {return $this->energyType;}
 	public function getHitpoints()  {return $this->hitpoints;}
 	public function getHealth()		{return $this->health;}
-	public function getAttack1()	{return $this->attack1;}
-	public function getAttack2()    {return $this->attack2;}
 	public function getAttackDmg()	{return $this->attackDamage;}		
 	public function getWeakness() 	{return $this->weaknessType;}
 	public function getResistance()	{return $this->resistanceType;}
 	public function getWorth()		{return $this->worth;}
 	public function getMultiplier()	{return $this->multiplier;}
+	public function getAttack1() 	{return $this->attack1;}
+	public function getAttack2() 	{return $this->attack2;}
 }
-
-
-
-
