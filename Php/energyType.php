@@ -13,9 +13,4 @@ class energyType {
 	}
 }
 
-$energyTypeLightning = new energyType('Lightning');
-$energyTypeFire = new energyType('Fire');
-$energyTypeWater = new energyType('Water');
-$energyTypefighting = new energyType('Fighting');
-
 ?>

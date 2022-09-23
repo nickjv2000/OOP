@@ -14,10 +14,5 @@ class weaknessType {
 	}
 }
 
-$fireWeakness = new weaknessType('Lightning', 1.5);
-$waterWeakness = new weaknessType('Fire', 2);
-$fightingWeakness = new weaknessType('Water', 1.75);
-$lightningWeakness = new weaknessType('Fighting', 1.4);
-
 ?>
 
