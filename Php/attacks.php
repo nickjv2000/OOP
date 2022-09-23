@@ -14,6 +14,10 @@ class attacks {
 	public function __toString() {
 		return json_encode($this);
 	}
+
+public function getAttackName() {return $this->attack;}
+public function getAttackDamage() {return $this->attackDamage;}
+
 }
 
 $electricRing = new Attacks('Electric Ring', 50);
