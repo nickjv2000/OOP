@@ -14,4 +14,9 @@ class resistanceType {
 	}
 }
 
+$fireResistance = new resistanceType('Water', 20);
+$waterResistance = new resistanceType('Fighting', 5);
+$lightningResistance = new resistanceType('Fire', 10);
+$fightingResistance = new resistanceType('Lightning', 20);
+
 ?>
