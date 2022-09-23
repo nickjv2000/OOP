@@ -13,31 +13,17 @@
 <?php 
 require 'pokeman.php';
 
-$fireResistance = new resistanceType('Water', 20);
-$waterResistance = new resistanceType('Fighting', 5);
-$lightningResistance = new resistanceType('Fire', 10);
-$fightingResistance = new resistanceType('Lightning', 20);
-
-$energyTypeLightning = new energyType('Lightning');
-$energyTypeFire = new energyType('Fire');
-$energyTypeWater = new energyType('Water');
-$energyTypefighting = new energyType('Fighting');
-
-$fireWeakness = new weaknessType('Lightning', 1.5);
-$waterWeakness = new weaknessType('Fire', 2);
-$fightingWeakness = new weaknessType('Water', 1.75);
-$lightningWeakness = new weaknessType('Fighting', 1.4);
-
 // creating a new pikachu & charmeleon to fight with their names
-$pikachu = new Pikachu("LightningRat");
-$charmeleon = new Charmeleon('FireMonster');
+$pikachu = new Pikachu("LightningRat", $energyTypeLightning, 60, 60, $electricRing, $pikaPunch, $fireWeakness, $fightingResistance, 20, 1.5);
+$charmeleon = new Charmeleon('FireMonster', $energyTypeFire, 60, 60, $headButt, $flare, $waterWeakness, $lightningResistance, 10, 2);
 
 // the complete fight of pikachu vs charmeleon
 echo "FIGHT <br> <br>";
 require 'battle.php';
-?>
 
+$pokemonBattle = new Battle();
+$pokemonBattle->startBattle($pikachu, $charmeleon); 
+?>
 </div>
 </body>
 </html>
-
