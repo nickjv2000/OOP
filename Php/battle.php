@@ -1,54 +1,43 @@
 <?php 
-echo $pikachu->getName() . "<br>";
-echo $charmeleon->getName() . ".<br>";
-echo $pikachu->getAttack1() . ".<br>";
-echo $pikachu->getAttack2() . ".<br>";
-echo $pikachu->getResistance() . ".<br>";
-echo $pikachu->getWeakness() . ".<br>";
-echo $pikachu->getEnergytype() . ".<br><br>";
-
 class Battle {
-  
-  public function startBattle(){ 
+  //pokemonDefender = charmeleon
+  //pokemonAttacker = pikachu
+  public function startBattle($pokemonAttacker, $pokemonDefender){ 
     
-    if($pikachu->getHitpoints() > 0 && $charmeleon->getHitpoints() > 0) {  
-      echo $pikachu->getName() . " has " . $pikachu->getHealth() . " health <br>";
-      echo $charmeleon->getName() . " has " . $charmeleon->getHealth() . " health <br>";
-      echo $pikachu->getName() . " uses " . $pikachu->getAttack1() . "<br>";
+    if($pokemonAttacker->getHitpoints() > 0 && $pokemonDefender->getHitpoints() > 0) {  
 
-      // $charmeleon->setHitpoints($charmeleon->getHitpoints() - ($pikachu->getAttack1()->getAttackDmg() - $charmeleon->getWorth()));
+      echo $pokemonAttacker->getName() . " has " . $pokemonAttacker->getHealth() . " health <br>";
+      echo $pokemonDefender->getName() . " has " . $pokemonDefender->getHealth() . " health <br>";
+      echo $pokemonAttacker->getName() . " uses " . $pokemonAttacker->getAttack1()->getAttackName() . "<br>";
 
-      echo $charmeleon->getName() . " has taken damage! His health is now at " . $charmeleon->getHitpoints() . " health<br>";
-      echo $charmeleon->getName() . " starts a counter attack and uses " . $charmeleon->getAttack2() . " <br>";
+      $pokemonDefender->setHitpoints($pokemonDefender->getHitpoints() - ($pokemonAttacker->getAttack1()->getAttackDamage() - $pokemonDefender->getWorth()));
 
-      // $pikachu->setHitpoints($pikachu->getHitpoints() - ($charmeleon->getAttackDmg() * $pikachu->getMultiplier())); 
+      echo $pokemonDefender->getName() . " has taken damage! His health is now at " . $pokemonDefender->getHitpoints() . " health<br>";
+      echo $pokemonDefender->getName() . " starts a counter attack and uses " . $pokemonDefender->getAttack2()->getAttackName() . " <br>";
 
-      echo $pikachu->getName() . " took a lot of damage! Their health is now at " . $pikachu->getHitpoints() . " health<br>";
-      echo $pikachu->getName() . " is going crazy and jumps around to show he's full of energy to attack back <br>";
-      echo $pikachu->getName() . " uses " . $pikachu->getAttack2() . "<br>";
+      $pokemonAttacker->setHitpoints($pokemonAttacker->getHitpoints() - ($pokemonDefender->getAttack2()->getAttackDamage() * $pokemonAttacker->getMultiplier())); 
 
-      // $charmeleon->setHitpoints($charmeleon->getHitpoints() - ($pikachu->getAttackDmg() - $charmeleon->getWorth()));
+      echo $pokemonAttacker->getName() . " took a lot of damage! Their health is now at " . $pokemonAttacker->getHitpoints() . " health<br>";
+      echo $pokemonAttacker->getName() . " is going crazy and jumps around to show he's full of energy to attack back <br>";
+      echo $pokemonAttacker->getName() . " uses " . $pokemonAttacker->getAttack2()->getAttackName() . "<br>";
 
-      echo $charmeleon->getName() . " is now at " . $charmeleon->getHitpoints() . " health <br>";
-      echo $charmeleon->getName() . " attacks with " . $charmeleon->getAttack1() . "<br>";
-      echo $pikachu->getName() . " has blocked the attack! <br>";
-      echo $pikachu->getName() . " has " . $pikachu->getHitpoints() . " health <br>";
-      echo $pikachu->getName() . " uses " . $pikachu->getAttack2() . "<br>";
+      $this->HealthAttack2($pokemonDefender, $pokemonAttacker);
 
-      // $charmeleon->setHitpoints($charmeleon->getHitpoints() - ($pikachu->getAttackDmg() - $charmeleon->getWorth())); 
+      echo $pokemonDefender->getName() . " is now at " . $pokemonDefender->getHitpoints() . " health <br>";
+      echo $pokemonDefender->getName() . " attacks with " . $pokemonDefender->getAttack1()->getAttackName() . "<br>";
+      echo $pokemonAttacker->getName() . " has blocked the attack! <br>";
+      echo $pokemonAttacker->getName() . " has " . $pokemonAttacker->getHitpoints() . " health <br>";
+      echo $pokemonAttacker->getName() . " uses " . $pokemonAttacker->getAttack2()->getAttackName() . "<br>";
 
-      echo $charmeleon->getName() . " has " . $charmeleon->getHitpoints() . " health left the attack was fatal!<br>";
-      echo $pikachu->getName() . " has survived with " . $pikachu->getHitpoints() . " health left and won the fight!";
+      $this->HealthAttack2($pokemonDefender, $pokemonAttacker); 
+
+      echo $pokemonDefender->getName() . " has " . $pokemonDefender->getHitpoints() . " health left the attack was fatal!<br>";
+      echo $pokemonAttacker->getName() . " has survived with " . $pokemonAttacker->getHitpoints() . " health left and won the fight!";
     }
   }
-}
 
-startBattle();
-// if($usedAttack1 = true) {
-//   $charmeleon->setHitpoints($charmeleon->getHitpoints() - ($pikachu->getAttack1()->getAttackDmg() - $charmeleon->getWorth()));
-//   $pikachu->setHitpoints($pikachu->getHitpoints() - ($charmeleon->getAttack1()->getAttackDmg() * $pikachu->getMultiplier())); 
-// } else if($usedAttack2 = true) {
-//   $charmeleon->setHitpoints($charmeleon->getHitpoints() - ($pikachu->getAttack2()->getAttackDmg() - $charmeleon->getWorth()));
-//   $pikachu->setHitpoints($pikachu->getHitpoints() - ($charmeleon->getAttack2()->getAttackDmg() * $pikachu->getMultiplier()));
-// }
+  public function HealthAttack2($pokemonDefender, $pokemonAttacker) {
+    $pokemonDefender->setHitpoints($pokemonDefender->getHitpoints() - ($pokemonAttacker->getAttack2()->getAttackDamage() - $pokemonDefender->getWorth()));
+  }
+} 
 ?>
