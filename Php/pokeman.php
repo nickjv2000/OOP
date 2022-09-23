@@ -5,7 +5,6 @@ include('weaknessType.php');
 include('pikachu.php');
 include('charmeleon.php');
 include('attacks.php');
-// include('battle.php');
 
 // The main Pokemon class to create the properties & constructor to make a pokemon
 class Pokemon{
@@ -53,8 +52,7 @@ class Pokemon{
 	public function getName()		{return $this->name;}
 	public function getEnergytype() {return $this->energyType;}
 	public function getHitpoints()  {return $this->hitpoints;}
-	public function getHealth()		{return $this->health;}
-	public function getAttackDmg()	{return $this->attackDamage;}		
+	public function getHealth()		{return $this->health;}		
 	public function getWeakness() 	{return $this->weaknessType;}
 	public function getResistance()	{return $this->resistanceType;}
 	public function getWorth()		{return $this->worth;}
