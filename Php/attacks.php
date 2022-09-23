@@ -15,3 +15,8 @@ class attacks {
 		return json_encode($this);
 	}
 }
+
+$electricRing = new Attacks('Electric Ring', 50);
+$pikaPunch = new Attacks('Pika Punch', 20);
+$headButt = new Attacks('Head butt', 10);
+$flare = new Attacks('Flare', 30);
